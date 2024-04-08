@@ -36,10 +36,10 @@ namespace CampOut.Models
         }
 
         // A method to find each object in the class with its id
-        // public CampOut FindObj(int objId)
-        // {
-        //     return _instances[objId - 1];
-        // }
+        public static MyCampOut FindObj(int objId)
+        {
+            return _instances[objId - 1];
+        }
 
 
 

@@ -99,23 +99,24 @@ namespace CampOutTests.Models
         }
 
 
-        // 5th Test: Test to find each destination in MyCampOut class
-        // [TestMethod]
-        // public void FindInstance_ReturnsEachObjectId_Int()
-        // {
-        //     // Arrange
-        //     MyCampOut newOuting1 = new MyCampOut("Osaka, Japan");
-        //     MyCampOut newOuting2 = new MyCampOut("Auckland, New Zealand");
-        //     int ExpectedId1 = 1;
-        //     int ExpectedId2 = 2;
+        // 6th Test: Test to find each destination in MyCampOut class
+        [TestMethod]
+        public void FindInstance_ReturnsEachObjectId_Int()
+        {
+            // Arrange
+            MyCampOut newOuting1 = new MyCampOut("Osaka, Japan");
+            MyCampOut newOuting2 = new MyCampOut("Auckland, New Zealand");
+            int ExpectedId1 = 1;
+            int ExpectedId2 = 2;
 
-        //     // Act
-        //     int actualId1 = newOuting1.Id
-        //     int actualId2 = newOuting2.Id
+            // Act
+            int actualId1 = newOuting1.Id;
+            int actualId2 = newOuting2.Id;
 
-        //     // Assert
-        //     Assert.AreEqual(ExpectedId1, actualId1);
+            // Assert
+            Assert.AreEqual(ExpectedId1, actualId1);
+            Assert.AreEqual(ExpectedId2, actualId2);
 
-        // }
+        }
     }    
 }

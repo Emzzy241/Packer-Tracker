@@ -87,6 +87,39 @@ namespace CampOutTests
             CollectionAssert.AreEqual(expectedEmptyList, Item.GetAllItems());
         }
 
+        public void Id_ReturnsObjectId_Int()
+        {
+            // Arrange
+            Item newItem1 = new Item("Pair of Glasses");
+            Item newItem2 = new Item("Backpack");
+            int ExpectedId1 = 1;
+            int ExpectedId2 = 2;
+
+            // Act
+            int actualId1 = newItem1.Id;
+            int actualId2 = newItem2.Id;
+
+            // Assert
+            Assert.AreEqual(ExpectedId1, actualId1);
+            Assert.AreEqual(ExpectedId2, actualId2);
+
+        }
+
+        // Test 7.  Test to Find an Item object by passing in its unique Id 
+        public void FindItem_ReturnsObject_Item()
+        {
+            // Arrange
+            Item newItem = new Item("School Bag");
+            Item newItem1 = new Item("Wood");
+
+            Item expectedItem = newItem;
+
+            // Act
+            Item actualItem = Item.FindItem(1);
+
+            // Assert
+            Assert.AreEqual(expectedItem, actualItem);
+        }
         
 
 

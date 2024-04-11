@@ -119,7 +119,7 @@ namespace CampOutTests.Models
 
         }
         // 7th Test: Test to 
-        public void FindInstance_ReturnsEachObjectId_Int()
+        public void FindInstance_ReturnsEachObjectId_MyCampOut()
         {
             // Arrange
             MyCampOut expectedObject1 = new MyCampOut("Osaka, Japan");

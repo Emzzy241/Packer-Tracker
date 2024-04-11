@@ -7,12 +7,17 @@ namespace CampOut.Models
     {
         public string ItemName { get; set; }
 
+        public int Id { get; }
+        
+        
+
         private static List<Item> _myInstance = new List<Item>(){};
         
         public Item(string myItemName)
         {
             ItemName = myItemName;
             _myInstance.Add(this);
+            Id = _myInstance.Count;
         }
 
         public static List<Item> GetAllItems()
@@ -22,6 +27,11 @@ namespace CampOut.Models
         public static void ClearAllItems()
         {
             _myInstance.Clear();
+        }
+
+        public static Item FindItem(int itemId)
+        {
+            return _myInstance[itemId -1];
         }
 
 

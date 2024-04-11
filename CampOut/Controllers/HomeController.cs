@@ -10,5 +10,6 @@ namespace CampOut.Controllers
         {
             return View();
         }
+        
     }
 }

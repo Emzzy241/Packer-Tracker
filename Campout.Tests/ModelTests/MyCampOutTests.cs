@@ -135,22 +135,22 @@ namespace CampOutTests.Models
 
         // Objects within objects will be perfoprmed here 
         // 8th Test: Test to add Item object into the Destination property of the MyCampOut object
-        // [TestMethod]
-        // public AddItem_AssociatesItemWithMyCampOut_ItemList()
-        // {
-        //     // Arrange
-        //     string ItemName = "something...";
-        //     Items newItem = new Items(myPlace);
-        //     List<Items> newList = new List<Items>(){newItem};
-        //     string destinationName = "Seoul, South Korea";
-        //     MyCampOut newMyCampOut = new MyCampOut(destinationName);
-        //     newMyCampOut.AddItem(newItem);
+        [TestMethod]
+        public void AddItem_AssociatesItemWithMyCampOut_ItemList()
+        {
+            // Arrange
+            string itemName = "something...";
+            Item newItem = new Item(itemName);
+            List<Item> newList = new List<Item>(){newItem};
+            string destinationName = "Seoul, South Korea";
+            MyCampOut newMyCampOut = new MyCampOut(destinationName);
+            newMyCampOut.AddItem(newItem);
 
-        //     // Act
-        //     List<Item> result = newMyCampOut.ItemName;
+            // Act
+            List<Item> result = newMyCampOut.ItemsList;
 
-        //     // Assert
-        //     CollectionAssert.AreEqual(newList, result);
-        // }
+            // Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }    
 }

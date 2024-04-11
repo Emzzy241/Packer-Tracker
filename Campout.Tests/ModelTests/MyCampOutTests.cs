@@ -132,5 +132,25 @@ namespace CampOutTests.Models
             Assert.AreEqual(expectedObject1, actualObject); 
 
         }
+
+        // Objects within objects will be perfoprmed here 
+        // 8th Test: Test to add Item object into the Destination property of the MyCampOut object
+        // [TestMethod]
+        // public AddItem_AssociatesItemWithMyCampOut_ItemList()
+        // {
+        //     // Arrange
+        //     string ItemName = "something...";
+        //     Items newItem = new Items(myPlace);
+        //     List<Items> newList = new List<Items>(){newItem};
+        //     string destinationName = "Seoul, South Korea";
+        //     MyCampOut newMyCampOut = new MyCampOut(destinationName);
+        //     newMyCampOut.AddItem(newItem);
+
+        //     // Act
+        //     List<Item> result = newMyCampOut.ItemName;
+
+        //     // Assert
+        //     CollectionAssert.AreEqual(newList, result);
+        // }
     }    
 }

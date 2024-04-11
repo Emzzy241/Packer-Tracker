@@ -1,4 +1,6 @@
-@* {<!DOCTYPE html>
+@using CampOut.Models;
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,7 +13,6 @@
       crossorigin="anonymous">
   </head>
   <body>
-    @using ToDoList.Models;
 
     <h1>destinations</h1>
 
@@ -21,15 +22,13 @@
     } 
 
     
-    @foreach (Category category in Model)
+    @foreach (MyCampOut newCampOut in Model)
     {
-      <h3><a href='/mycampout/@category.Id'>@category.Name</a></h3>
+      <h3><a href='/mycampout/@newCampOut.Id'>@newCampOut.Destination</a></h3>
     }
 
     <p><a href='/mycampout/new'>Add New Destination</a></p>
     <p><a href='/'>Back home</a></p>
   </body>
 </html>
-
-}*@
 

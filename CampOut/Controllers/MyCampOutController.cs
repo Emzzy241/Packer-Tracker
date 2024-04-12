@@ -30,7 +30,7 @@ namespace CampOut.Controllers
         }
 
         // A different Create that creates new Items within a certain Category(MyCampOut)
-        [HttpPost("/mycampout/{Id}/items")]
+        [HttpPost("/mycampout/{myCampOutId}/items")]
         public ActionResult Create(int myCampOutId, string itemName)
         {
             // A dictionary is needed. This dictionary has key(string) and value(object)
@@ -40,13 +40,13 @@ namespace CampOut.Controllers
             foundObj.AddItem(newItemObj);
             List<Item> myCampOutItems = foundObj.ItemsList;
             model.Add("items", myCampOutItems);
-            model.Add("category", foundObj);
+            model.Add("newcampout", foundObj);
             return View("Show", model);
         }
 
         // For showing each destination
-        [HttpGet("/mycampout/{Id}")]
-        public ActionResult Show(int id)
+        [HttpGet("/mycampout/{myCampOutId}")]
+        public ActionResult Show(int myCampOutId)
         {
             // We're doing something new here. Because this page will display both a Category and all Item objects saved within that Category, we must pass two types of objects to the view. However, View() can only accept one model argument. To work around this, we do the following:
             // Create a new Dictionary called model because a Dictionary can hold multiple key-value pairs.
@@ -54,12 +54,15 @@ namespace CampOut.Controllers
             // The Dictionary, which is named model, will be passed into View().
 
             Dictionary<string, object> model = new Dictionary<string, object>(){};
-            MyCampOut selectedObj = MyCampOut.FindObj(id);
+            MyCampOut selectedObj = MyCampOut.FindObj(myCampOutId);
             List<Item> myCampOutItems = selectedObj.ItemsList;
-            model.Add("myCampOut", selectedObj);
+            model.Add("newcampout", selectedObj);
             model.Add("items", myCampOutItems);
             return View(model);
         }
+
+        // Done with the views & controllers for the category(MyCampOut) it is now time to write the Views and controllers for Item
+
 
 
     }

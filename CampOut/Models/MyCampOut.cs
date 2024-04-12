@@ -24,7 +24,7 @@ namespace CampOut.Models
             // Setting the value for the id property right inside the constructor; A read-only property
             Id = _instances.Count;
             // For the new list of items we just created
-            ItemsList = new List<Item>(){};
+            ItemsList = new List<Item>{};
         }
 
         // A Method that returns all instances made from the MyCampOut class
